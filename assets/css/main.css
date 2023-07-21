@@ -1,11 +1,15 @@
 :root{
     --body-padding-horiz: 5px;
+    --color-example: rgb(11, 11, 69);
+    --text-font-size: 16px;
+    --code-font-size: calc(var(--text-font-size) - 2px);
 }
 
 body{
     padding: var(--body-padding-horiz);
     background: linear-gradient(180deg, rgba(230,240,249,1) 22%, rgba(240,248,255,1) 86%);
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 h1{
@@ -18,6 +22,7 @@ table{
     border-collapse: collapse;
     border: 1px solid black;
     max-width: calc(100vw - 2 * var(--body-padding-horiz));
+    font-size: var(--text-font-size);
 }
 
 th, td{
@@ -27,10 +32,53 @@ th, td{
 
 .td-method{
     text-align: center;
-    font-weight: 700;
+    font-weight: 600;
+    font-family: Hack, monospace;
+    font-size: var(--code-font-size);
+    overflow-wrap:break-word;
+    word-wrap: break-word;
 }
 
 .td-descript{
     text-align: left;
-    max-width: 180px;
+    max-width: 500px;
+}
+
+.td-example{
+    font-family: Hack, monospace;
+    font-size: var(--code-font-size);
+    color: var(--color-example);
+}
+
+.meth-block_row{
+    margin: 5px 0px;
+    padding: 5px;
+    border: 1px solid black;
+}
+
+.show-large{
+    display: table;
+}
+
+.show-small{
+    display: none;
+}
+
+@media (max-width:768px){
+    .show-large{
+        display: none;
+    }
+
+    .show-small{
+        display: block;
+    }
+
+    .td-method{
+        margin-bottom: 10px;
+    }
+
+    .td-descript{
+        max-width: none;
+        margin-bottom: 10px;
+    }
 }

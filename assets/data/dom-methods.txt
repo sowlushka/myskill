@@ -8,3 +8,30 @@ elem.querySelector(css)
 let el=elem.querySelector('div img');
 
 
+elem.querySelectorAll(css)
+Получить все элементы, соответствующие css-селектору внутри элемента elem. Возвращает статическую коллекцию.
+let elArr=elem.querySelector('div img');
+
+
+elem.matches(css)
+Проверить соответствует ли элемент elem селектору css. Возвращает true/false
+if (elem.matches('a[href$="zip"]')) {alert("Совпало");}
+
+
+elem.closest(css)
+Ищет первый родительский элемент, соответствующий селектору в аргументе
+let el=elem.closest('div img');
+
+
+elem.getElementsByTagName(tag)
+<b>Устарело.</b> Получить список элементов по названию тега. Возвращает живую коллекцию.
+let divs = elem.getElementsByTagName('div');
+
+
+el.getElementsByClassName(Name)
+<b>Устарело.</b> Получить список элементов по названию класса Name. Возвращает живую коллекцию.
+let elems = el.getElementsByClassName('container');
+
+document.getElementsByName(name)
+возвращает элементы с заданным атрибутом name. Возвращает живую коллекцию.
+let inputs = table.getElementsByTagName('input');
