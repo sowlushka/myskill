@@ -1,10 +1,10 @@
 document.getElementById(id)
 Найти элемент по его id
-let elem = document.getElementById('elem');
+let el=document.getElementById('elem');
 
 
 elem.querySelector(css)
 Найти первый элемент, соответствующий css-селектору внутри  элемента elem
-let element = elem.querySelector('div img');
+let el=elem.querySelector('div img');
 
 

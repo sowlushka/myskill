@@ -10,19 +10,20 @@ fetch(url)
     let tbodyHTML="";
     text.forEach(element => {
         let trowData=element.trim().split("\n");
+        if(trowData.length==3){
         tbodyHTML+=`
                     <tr>
-                        <td>
+                        <td class="td-method">
                             ${trowData[0]}
                         </td>
-                        <td>
+                        <td class="td-descript">
                             ${trowData[1]}
                         </td>
                         <td>
                             ${trowData[2]}
                         </td>
                     </tr>
-        `;
+        `;}
     });
     let tbody=document.getElementById('meth-list');
     tbody.insertAdjacentHTML("afterbegin",tbodyHTML);

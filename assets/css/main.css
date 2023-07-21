@@ -1,5 +1,9 @@
+:root{
+    --body-padding-horiz: 5px;
+}
+
 body{
-    padding: 5px;
+    padding: var(--body-padding-horiz);
     background: linear-gradient(180deg, rgba(230,240,249,1) 22%, rgba(240,248,255,1) 86%);
     min-height: 100vh;
 }
@@ -13,7 +17,7 @@ table{
     margin-right: auto;
     border-collapse: collapse;
     border: 1px solid black;
-    max-width: 320px;
+    max-width: calc(100vw - 2 * var(--body-padding-horiz));
 }
 
 th, td{
@@ -23,9 +27,10 @@ th, td{
 
 .td-method{
     text-align: center;
-    font-weight: 500;
+    font-weight: 700;
 }
 
 .td-descript{
     text-align: left;
+    max-width: 180px;
 }
