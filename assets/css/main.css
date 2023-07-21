@@ -17,8 +17,7 @@ h1{
 }
 
 table{
-    margin-left: auto;
-    margin-right: auto;
+    margin: 20px auto;
     border-collapse: collapse;
     border: 1px solid black;
     max-width: calc(100vw - 2 * var(--body-padding-horiz));

@@ -15,7 +15,7 @@ let elArr=elem.querySelector('div img');
 
 elem.matches(css)
 Проверить соответствует ли элемент elem селектору css. Возвращает true/false
-if (elem.matches('a[href$="zip"]')) {alert("Совпало");}
+if (elem.matches('a[href$="zip"]'))<br>{alert("Совпало");}
 
 
 elem.closest(css)
@@ -32,6 +32,62 @@ el.getElementsByClassName(Name)
 <b>Устарело.</b> Получить список элементов по названию класса Name. Возвращает живую коллекцию.
 let elems = el.getElementsByClassName('container');
 
+
 document.getElementsByName(name)
 возвращает элементы с заданным атрибутом name. Возвращает живую коллекцию.
 let inputs = table.getElementsByTagName('input');
+
+
+elemA.contains(elemB)
+Проверяет, содержится ли внутри элемента A элемент-потомок B. Возвращает true/false (начинает поиск с себя самого)
+if (elemA.contains(elemB)) {alert("Содержит");}
+
+
+elem.getAttribute(name)
+получает значение атрибута
+imageOnPage.getAttribute('src');//вернём ссылку из src
+
+
+elem.hasAttribute(name)
+проверяет наличие атрибута: true/false
+button.hasAttribute('onclick'); 
+
+
+elem.setAttribute(name, value)
+устанавливает значение атрибута
+button.setAttribute('lang', 'ru');
+
+
+elem.removeAttribute(name)
+удаляет атрибут
+button.removeAttribute('disabled');//удаляем атрибут
+
+
+elem.className
+Получить доступ к строке классов элемента elem. Работает на чтение/запись.
+elem.className="container d-block s-4";
+
+
+elem.classList
+Получить список классов, которые имеются у элемента. Только чтение
+for (let name of elem.classList)<br>{alert(name);}
+
+
+elem.classList.add/remove("class")
+добавить/удалить класс
+cat.classList.add('black', 'white', 'fluffy');<br>cat.classList.remove('small');
+
+
+elem.classList.toggle("class")
+добавить класс, если его нет, иначе удалить
+cat.classList.toggle("fluffy");
+
+
+elem.classList.contains("class")
+проверка наличия класса, возвращает true/false
+if(elem.classList.contains("class"))<br>{alert("Есть такой класс");}
+
+
+elem.style
+Доступ к аттрибуту стиля
+elem.style.width="100px";
