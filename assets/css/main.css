@@ -71,6 +71,10 @@ th{
     max-width: 500px;
 }
 
+.td-descript img{
+    width: 100%;
+}
+
 .td-example{
     font-family: Hack, monospace;
     font-size: var(--code-font-size);
