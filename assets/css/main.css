@@ -83,7 +83,7 @@ th{
 .td-example{
     font-family: Hack, monospace;
     font-size: var(--code-font-size);
-    letter-spacing: -0.08em;
+    letter-spacing: -0.05em;
     color: var(--color-example);
     padding: 2px;
 }
@@ -102,7 +102,7 @@ th{
     display: none;
 }
 
-@media (max-width:740px){
+@media (max-width:768px){
 
     :root{
         --text-font-size: 14px;

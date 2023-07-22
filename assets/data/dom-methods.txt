@@ -107,15 +107,30 @@ getComputedStyle (element,[pseudo])
 let computedStyle = getComputedStyle(document.body);<br>alert(computedStyle.marginTop);//5px<br>alert(computedStyle.color);//rgb(255, 0, 0)
 
 
-/*Изменение документа. Работа с элементами*/
+/*<a href="https://learn.javascript.ru/modifying-document" target="_blank">Изменение документа. Работа с элементами</a>*/
 document.createElement(tag)
 Создать новый элемент с тегом tag
 const newElement = document.createElement('div');<br>newElement.textContent = 'Новый элемент';
 
 
 node.append(&hellip;nodes or strings)<br>node.prepend(&hellip;nodes or strings)<br>node.before(&hellip;nodes or strings)<br>node.after(&hellip;nodes or strings)
-Вставить элемент в соответствующее место узла<br><img src="assets/img/before-prepend-append-after.svg">
+Вставить элемент или текст в соответствующее место узла<br><img src="assets/img/before-prepend-append-after.svg">
 let liFirst = document.createElement('li');<br>liFirst.innerHTML = 'prepend';<br> ol.prepend(liFirst); //вставить liFirst в начало
+
+
+node.insertAdjacentHTML(where, html)
+Вставить html в DOM-узел с учётом положения Where:<br>"beforebegin" – вставить html непосредственно перед node<br>"afterbegin" – вставить html в начало node<br>"beforeend" – вставить html в конец node<br>"afterend" – вставить html непосредственно после node
+div.insertAdjacentHTML ('beforebegin','&lt;p&gt;Привет&lt;/p&gt;');<br>div.insertAdjacentHTML ('afterend','&lt;p&gt;Пока&lt;/p&gt;');
+
+
+node.remove()
+Удалить узел. <i>Если узел будет перемещаться, его удалять не надо</i>
+let div = document.createElement('div');<br>div.remove();
+
+
+node.cloneNode(bool)
+Клонировать узел. bool: true/false - клонировать с дочерними элементами или без.
+let div2=div.cloneNode(true);
 
 
 /*<a href="https://learn.javascript.ru/introduction-browser-events" target="_blank">События</a>*/
