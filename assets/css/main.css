@@ -52,6 +52,10 @@ th{
     margin: 1px 0px;
 }
 
+.td-methods-group-name a, .block-methods-group-name a{
+    color: rgb(11, 11, 69);
+}
+
 .td-method{
     text-align: center;
     font-weight: 600;

@@ -99,17 +99,17 @@ elem.style
 elem.style.width="100px";
 
 
-getComputedStyle(element,[pseudo])
+getComputedStyle (element,[pseudo])
 Получить окончательное значение свойства элемента element (и псевдоэлемента, если указан)
 let computedStyle = getComputedStyle(document.body);<br>alert(computedStyle.marginTop);//5px<br>alert(computedStyle.color);//rgb(255, 0, 0)
 
 
 /*<a href="https://learn.javascript.ru/introduction-browser-events" target="_blank">События</a>*/
-element.addEventListener(eventName,handler,[options]);
+element.addEventListener (eventName,handler,[options]);
 Назначить элементу element событие eventName, обработка которого реализована в функции handler. Про опции в <a href="https://learn.javascript.ru/introduction-browser-events#addeventlistener" target="_blank">ссылке</a>.
-element.addEventListener('click', makeClick);
+element.addEventListener ('click', makeClick);
 
 
-element.removeEventListener(eventName,handler);
+element.removeEventListener (eventName,handler);
 Удалить у элемента element функцию-обработчик handler, назначенную для события eventName. Удаление события
-element.removeEventListener('click', makeClick);
+element.removeEventListener ('click', makeClick);
