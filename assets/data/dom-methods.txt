@@ -1,3 +1,4 @@
+/*Методы поиска*/
 document.getElementById(id)
 Найти элемент по его id
 let el=document.getElementById('elem');
@@ -42,7 +43,7 @@ elemA.contains(elemB)
 Проверяет, содержится ли внутри элемента A элемент-потомок B. Возвращает true/false (начинает поиск с себя самого)
 if (elemA.contains(elemB)) {alert("Содержит");}
 
-
+/*Работа с аттрибутами*/
 elem.getAttribute(name)
 получает значение атрибута
 imageOnPage.getAttribute('src');//вернём ссылку из src
@@ -62,7 +63,7 @@ elem.removeAttribute(name)
 удаляет атрибут
 button.removeAttribute('disabled');//удаляем атрибут
 
-
+/*Методы работы с классами*/
 elem.className
 Получить доступ к строке классов элемента elem. Работает на чтение/запись.
 elem.className="container d-block s-4";
@@ -73,9 +74,14 @@ elem.classList
 for (let name of elem.classList)<br>{alert(name);}
 
 
-elem.classList.add/remove("class")
+elem.classList.add("class")
+добавить класс или перечень классов
+cat.classList.add('black', 'white', 'fluffy');
+
+
+elem.classList.remove("class")
 добавить/удалить класс
-cat.classList.add('black', 'white', 'fluffy');<br>cat.classList.remove('small');
+cat.classList.remove('cat-small');
 
 
 elem.classList.toggle("class")
@@ -87,7 +93,12 @@ elem.classList.contains("class")
 проверка наличия класса, возвращает true/false
 if(elem.classList.contains("class"))<br>{alert("Есть такой класс");}
 
-
+/*Методы работы со стилями*/
 elem.style
 Доступ к аттрибуту стиля
 elem.style.width="100px";
+
+
+getComputedStyle(element,[pseudo])
+Получить окончательное значение свойства элемента element (и псевдоэлемента, если указан)
+let computedStyle = getComputedStyle(document.body);<br>alert(computedStyle.marginTop);//5px<br>alert(computedStyle.color);//rgb(255, 0, 0)

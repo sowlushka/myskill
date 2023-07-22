@@ -3,11 +3,13 @@
     --color-example: rgb(11, 11, 69);
     --text-font-size: 16px;
     --code-font-size: calc(var(--text-font-size) - 2px);
+    --method-group-header-font-size: calc(var(--text-font-size) + 2px);
 }
 
 body{
     padding: var(--body-padding-horiz);
     background: linear-gradient(180deg, rgba(230,240,249,1) 22%, rgba(240,248,255,1) 86%);
+    background-attachment: fixed;
     min-height: 100vh;
     overflow-x: hidden;
 }
@@ -27,6 +29,27 @@ table{
 th, td{
     border: 1px solid black;
     padding: 2px 5px;
+    font-size: var(--text-font-size);
+}
+
+th{
+    font-size: var(--method-group-header-font-size);
+}
+
+.td-methods-group-name, .block-methods-group-name{
+/*Стили строки с заглавием группы методов*/
+    font-size: var(--method-group-header-font-size);
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: rgb(210, 228, 243);
+    padding: 5px;
+}
+
+.block-methods-group-name{
+    background-color: rgb(210, 228, 243);
+    border: 1px solid black;
+    margin: 1px 0px;
 }
 
 .td-method{
@@ -47,6 +70,7 @@ th, td{
     font-family: Hack, monospace;
     font-size: var(--code-font-size);
     color: var(--color-example);
+    padding: 2px;
 }
 
 .meth-block_row{
@@ -64,6 +88,11 @@ th, td{
 }
 
 @media (max-width:768px){
+
+    :root{
+        --text-font-size: 14px;
+    }
+
     .show-large{
         display: none;
     }
