@@ -26,22 +26,23 @@ let el=elem.closest('div img');
 
 elem.getElementsByTagName(tag)
 <b>Устарело.</b> Получить список элементов по названию тега. Возвращает живую коллекцию.
-let divs = elem.getElementsByTagName('div');
+let divs = elem.getElementsByTagName ('div');
 
 
-el.getElementsByClassName(Name)
+el.getElementsByClassName (Name)
 <b>Устарело.</b> Получить список элементов по названию класса Name. Возвращает живую коллекцию.
-let elems = el.getElementsByClassName('container');
+let elems = el.getElementsByClassName ('container');
 
 
-document.getElementsByName(name)
+document.getElementsByName (name)
 возвращает элементы с заданным атрибутом name. Возвращает живую коллекцию.
-let inputs = table.getElementsByTagName('input');
+let inputs = table.getElementsByTagName ('input');
 
 
 elemA.contains(elemB)
 Проверяет, содержится ли внутри элемента A элемент-потомок B. Возвращает true/false (начинает поиск с себя самого)
 if (elemA.contains(elemB)) {alert("Содержит");}
+
 
 /*Работа с аттрибутами*/
 elem.getAttribute(name)
@@ -62,6 +63,7 @@ button.setAttribute('lang', 'ru');
 elem.removeAttribute(name)
 удаляет атрибут
 button.removeAttribute('disabled');//удаляем атрибут
+
 
 /*Методы работы с классами*/
 elem.className
@@ -89,9 +91,10 @@ elem.classList.toggle("class")
 cat.classList.toggle("fluffy");
 
 
-elem.classList.contains("class")
+elem.classList.contains ("class")
 проверка наличия класса, возвращает true/false
 if(elem.classList.contains("class"))<br>{alert("Есть такой класс");}
+
 
 /*Методы работы со стилями*/
 elem.style
@@ -110,8 +113,8 @@ document.createElement(tag)
 const newElement = document.createElement('div');<br>newElement.textContent = 'Новый элемент';
 
 
-node.append(...nodes or strings)<br>node.prepend(...nodes or strings)<br>node.before(...nodes or strings)<br>node.after(...nodes or strings)
-Вставить элемент в соответствующее место узла<br><img src="https://learn.javascript.ru/article/modifying-document/before-prepend-append-after.svg">
+node.append(&hellip;nodes or strings)<br>node.prepend(&hellip;nodes or strings)<br>node.before(&hellip;nodes or strings)<br>node.after(&hellip;nodes or strings)
+Вставить элемент в соответствующее место узла<br><img src="assets/img/before-prepend-append-after.svg">
 let liFirst = document.createElement('li');<br>liFirst.innerHTML = 'prepend';<br> ol.prepend(liFirst); //вставить liFirst в начало
 
 

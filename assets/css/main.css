@@ -61,6 +61,7 @@ th{
     text-align: center;
     font-weight: 600;
     font-family: Hack, monospace;
+    letter-spacing: -0.08em;
     font-size: var(--code-font-size);
     overflow-wrap:break-word;
     word-wrap: break-word;
@@ -73,11 +74,16 @@ th{
 
 .td-descript img{
     width: 100%;
+    max-width: 400px;
+    min-width: 200px;
+    margin: 0px auto;;
 }
+
 
 .td-example{
     font-family: Hack, monospace;
     font-size: var(--code-font-size);
+    letter-spacing: -0.08em;
     color: var(--color-example);
     padding: 2px;
 }
@@ -96,7 +102,7 @@ th{
     display: none;
 }
 
-@media (max-width:768px){
+@media (max-width:740px){
 
     :root{
         --text-font-size: 14px;
