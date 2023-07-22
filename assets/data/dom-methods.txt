@@ -104,6 +104,17 @@ getComputedStyle (element,[pseudo])
 let computedStyle = getComputedStyle(document.body);<br>alert(computedStyle.marginTop);//5px<br>alert(computedStyle.color);//rgb(255, 0, 0)
 
 
+/*Изменение документа. Работа с элементами*/
+document.createElement(tag)
+Создать новый элемент с тегом tag
+const newElement = document.createElement('div');<br>newElement.textContent = 'Новый элемент';
+
+
+node.append(...nodes or strings)<br>node.prepend(...nodes or strings)<br>node.before(...nodes or strings)<br>node.after(...nodes or strings)
+Вставить элемент в соответствующее место узла<br><img src="https://learn.javascript.ru/article/modifying-document/before-prepend-append-after.svg">
+let liFirst = document.createElement('li');<br>liFirst.innerHTML = 'prepend';<br> ol.prepend(liFirst); //вставить liFirst в начало
+
+
 /*<a href="https://learn.javascript.ru/introduction-browser-events" target="_blank">События</a>*/
 element.addEventListener (eventName,handler,[options]);
 Назначить элементу element событие eventName, обработка которого реализована в функции handler. Про опции в <a href="https://learn.javascript.ru/introduction-browser-events#addeventlistener" target="_blank">ссылке</a>.
