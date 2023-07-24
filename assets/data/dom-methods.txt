@@ -71,7 +71,7 @@ let el=elem.lastChild();
 
 elem.parentElement()
 Получить родительский элемент. Игнорируются текстовые узлы и комментарии
-let el=elem.parentNode();
+let el=elem.parentElement();
 
 
 elem.parentNode()
