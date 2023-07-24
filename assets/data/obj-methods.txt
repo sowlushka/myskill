@@ -1,0 +1,25 @@
+/*<a href="https://learn.javascript.ru/object#literaly-i-svoystva" target="_blank">Инициализация</a>*/
+new Object()
+Инициализация объекта через конструктор объекта.
+let objUser = new Object();
+
+
+{}
+Инициализация через литерал
+let objUser={};
+
+
+/*Добавление / удаление свойств*/
+obj["New property"] = value
+Добавление нового свойства выполняется через присваивание значения новому свойству
+let user = {};<br>user["likes birds"] = true;
+
+
+object[key] = true;
+Через присваивание значения свойству в переменной key
+let key = "likes birds";<br>user[key]=true;
+
+
+{[key]:value}
+В литеральной нотации переменная с названием нового свойства заключается в квадратные скобки
+let fruit="apple";<br>let bag={[fruit]:5};

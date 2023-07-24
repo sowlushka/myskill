@@ -1,0 +1,115 @@
+:root{
+    --color-example: rgb(11, 11, 69);
+    --text-font-size: 16px;
+    --code-font-size: calc(var(--text-font-size) - 2px);
+    --code-letter-spacing: -0.04;/*Отступ между символами в js-коде*/
+    --method-group-header-font-size: calc(var(--text-font-size) + 2px);/*Размер шрифта подзаголовков между группой методов*/
+}
+
+table{
+    
+    border-collapse: collapse;
+    border: 1px solid black;
+    font-size: var(--text-font-size);
+}
+
+th, td{
+    border: 1px solid black;
+    padding: 2px 5px;
+    font-size: var(--text-font-size);
+}
+
+th{
+    font-size: var(--method-group-header-font-size);
+    text-align: center;
+}
+
+.td-methods-group-name, .block-methods-group-name{
+/*Стили строки с заглавием группы методов*/
+    font-size: var(--method-group-header-font-size);
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: rgb(210, 228, 243);
+    padding: 5px;
+}
+
+.block-methods-group-name{
+    background-color: rgb(210, 228, 243);
+    border: 1px solid black;
+    margin: 1px 0px;
+}
+
+
+.td-methods-group-name a, .block-methods-group-name a{
+    color: rgb(11, 11, 69);
+}
+
+.td-method{
+    text-align: center;
+    font-weight: 600;
+    font-family: Hack, monospace;
+    letter-spacing: var(--code-letter-spacing);
+    font-size: var(--code-font-size);
+    overflow-wrap:break-word;
+    word-wrap: break-word;
+}
+
+.td-descript{
+    text-align: left;
+    max-width: 500px;
+}
+
+.td-descript img{
+    width: 100%;
+    max-width: 400px;
+    min-width: 200px;
+    margin: 0px auto;;
+}
+
+
+.td-example{
+    font-family: Hack, monospace;
+    font-size: var(--code-font-size);
+    letter-spacing: var(--code-letter-spacing);
+    color: var(--color-example);
+    padding: 2px;
+}
+
+.meth-block_row{
+    margin: 5px 0px;
+    padding: 5px;
+    border: 1px solid black;
+}
+
+.show-large{
+    display: table;
+}
+
+.show-small{
+    display: none;
+}
+
+@media (max-width:800px){
+
+    :root{
+        --text-font-size: 14px;
+    }
+
+    .show-large{
+        display: none;
+    }
+
+    .show-small{
+        display: block;
+    }
+
+    .td-method{
+        margin-bottom: 10px;
+    }
+
+    .td-descript{
+        max-width: none;
+        margin-bottom: 10px;
+    }
+}

@@ -1,7 +1,7 @@
 "use strict";
 
-const url="assets/data/dom-methods.txt";
-fetch(url)
+const url="assets/data/";
+fetch(url+tableContentFile)
 .then((response)=>response.text())
 .then((text)=>{
     //Парсим текст, заполняем таблицу
