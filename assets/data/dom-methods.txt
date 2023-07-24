@@ -43,40 +43,102 @@ elemA.contains(elemB)
 Проверяет, содержится ли внутри элемента A элемент-потомок B. Возвращает true/false (начинает поиск с себя самого)
 if (elemA.contains(elemB)) {alert("Содержит");}
 
+/*<a href="https://learn.javascript.ru/dom-navigation#deti-childnodes-firstchild-lastchild" target="_blank">Навигация по узлам (свойства)</a>*/
+node.parentNode
+Получить родительский узел, в том числе тектовый узел или комментарий
+let parentNode=node.parentNode;
 
-elem.childNodes()
-Получить коллекцию дочерних узлов (прямых потомков.). Возвращает живую коллекцию
+
+node.previousSibling
+Получить предыдущий узел, в том числе текстовый узел или комментарий
+let previousNode=node.previousSibling;
+
+
+node.nextSibling
+Получить следующий узел, в том числе текстовый узел или комментарий
+let nextNode=node.nextSibling;
+
+
+node.childNodes
+Получить <b>коллекцию</b> дочерних узлов (прямых потомков.). Возвращает живую коллекцию
 for (let i=0; i&lt;document.body.childNodes.length; i++) {<br>alert(document.body.childNodes[i]);<br>}
 
 
-elem.firstElementChild()
-Получить первый дочерний элемент. Игнорируются текстовые узлы и комментарии.
-let el=elem.firstElementChild();
-
-
-elem.firstChild()
+node.firstChild
 Получить первый дочерний узел, в том числе текстовый узел или комментарий
-let el=elem.firstChild();
+let firstChildNode=node.firstChild;
 
 
-elem.lastElementChild()
-Получить последний дочерний элемент. Игнорируются текстовые узлы и комментарии.
-let el=elem.lastElementChild();
-
-
-elem.lastChild()
+node.lastChild
 Получить последний дочерний узел, в том числе текстовый узел или комментарий
-let el=elem.lastChild();
+let lastChildNode=node.lastChild;
 
 
-elem.parentElement()
+/*<a href="https://learn.javascript.ru/dom-navigation#navigatsiya-tolko-po-elementam" traget="_blank">Навигация по элементам (свойства)</a>*/
+elem.parentElement
 Получить родительский элемент. Игнорируются текстовые узлы и комментарии
-let el=elem.parentElement();
+let el=elem.parentElement;
 
 
-elem.parentNode()
-Получить родительский узел, в том числе тектовый узел или комментарий
-let el=elem.parentNode();
+elem.previousElementSibling
+Получить предыдущий соседний элемент.
+let previousElem=elem.previousElementSibling;
+
+
+elem.nextElementSibling
+Получить предыдущий соседний элемент.
+let nextElem=elem.nextElementSibling;
+
+
+elem.children
+Получить дочерние элементы. Игнорируются текстовые узлы и комментарии
+let el=elem.children;
+
+
+elem.firstElementChild
+Получить первый дочерний элемент. Игнорируются текстовые узлы и комментарии.
+let el=elem.firstElementChild;
+
+
+elem.lastElementChild
+Получить последний дочерний элемент. Игнорируются текстовые узлы и комментарии.
+let el=elem.lastElementChild;
+
+
+/*<a href="https://learn.javascript.ru/dom-navigation#dom-navigation-tables" traget="_blank">Навигация по элементам таблицы (свойства)</a>*/
+table.rows<br>thead.rows<br>tbody.rows<br>tfoot.rows
+Получить коллекцию строк таблицы, шапки, тела или итогов
+let table = document.querySelector('#table');<br>for (let row of table.rows) {<br>&nbsp;console.log(row);<br>}
+
+
+table.caption<br>table.tHead<br>table.tFoot
+Ссылки на элементы таблицы: заголовок, шапка, итоги
+let table = document.querySelector('#table');<br>console.log(table.thead);
+
+
+table.tBodies
+Получить коллекцию tbodies. По спецификации может быть больше одного.
+let table = document.querySelector('#table');<br>for (let tbody of table.tBodies) {<br>&nbsp;console.log(tbody);<br>}
+
+
+tr.cells
+Получить коллекцию ячеек строки
+let table = document.querySelector('#table');<br>for (let cell of table.rows[0].cells) {<br>&nbsp;console.log(cell);<br>}
+
+
+tr.sectionRowIndex
+Получить номер строки в текущей секции thead / tbody / tfoot
+let rowIndex=tr.sectionRowIndex;
+
+
+tr.rowIndex
+Получить номер строки в таблице считая с самого начала, включая thead, tbody, tfoot
+let rowIndex=tr.rowIndex;
+
+
+td.cellIndex<br>th.cellIndex
+Получить индекс ячейки в строке tr
+&nbsp;
 
 
 /*Работа с аттрибутами*/
