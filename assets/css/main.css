@@ -3,7 +3,8 @@
     --color-example: rgb(11, 11, 69);
     --text-font-size: 16px;
     --code-font-size: calc(var(--text-font-size) - 2px);
-    --method-group-header-font-size: calc(var(--text-font-size) + 2px);
+    --code-letter-spacing: -0.04;/*Отступ между символами в js-коде*/
+    --method-group-header-font-size: calc(var(--text-font-size) + 2px);/*Размер шрифта подзаголовков между группой методов*/
 }
 
 body{
@@ -61,7 +62,7 @@ th{
     text-align: center;
     font-weight: 600;
     font-family: Hack, monospace;
-    letter-spacing: -0.08em;
+    letter-spacing: var(--code-letter-spacing);
     font-size: var(--code-font-size);
     overflow-wrap:break-word;
     word-wrap: break-word;
@@ -83,7 +84,7 @@ th{
 .td-example{
     font-family: Hack, monospace;
     font-size: var(--code-font-size);
-    letter-spacing: -0.05em;
+    letter-spacing: var(--code-letter-spacing);
     color: var(--color-example);
     padding: 2px;
 }
@@ -102,7 +103,7 @@ th{
     display: none;
 }
 
-@media (max-width:768px){
+@media (max-width:800px){
 
     :root{
         --text-font-size: 14px;

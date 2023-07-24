@@ -44,6 +44,41 @@ elemA.contains(elemB)
 if (elemA.contains(elemB)) {alert("Содержит");}
 
 
+elem.childNodes()
+Получить коллекцию дочерних узлов (прямых потомков.). Возвращает живую коллекцию
+for (let i=0; i&lt;document.body.childNodes.length; i++) {<br>alert(document.body.childNodes[i]);<br>}
+
+
+elem.firstElementChild()
+Получить первый дочерний элемент. Игнорируются текстовые узлы и комментарии.
+let el=elem.firstElementChild();
+
+
+elem.firstChild()
+Получить первый дочерний узел, в том числе текстовый узел или комментарий
+let el=elem.firstChild();
+
+
+elem.lastElementChild()
+Получить последний дочерний элемент. Игнорируются текстовые узлы и комментарии.
+let el=elem.lastElementChild();
+
+
+elem.lastChild()
+Получить последний дочерний узел, в том числе текстовый узел или комментарий
+let el=elem.lastChild();
+
+
+elem.parentElement()
+Получить родительский элемент. Игнорируются текстовые узлы и комментарии
+let el=elem.parentNode();
+
+
+elem.parentNode()
+Получить родительский узел, в том числе тектовый узел или комментарий
+let el=elem.parentNode();
+
+
 /*Работа с аттрибутами*/
 elem.getAttribute(name)
 получает значение атрибута
