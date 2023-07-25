@@ -45,6 +45,11 @@ for(key in obj)
 for(let property in user){<br>&nbsp;console.log(user[property]);<br>}
 
 
+Object.keys(obj) 
+Получить массив ключей объекта obj
+Object.keys(user); // ["name", "age"]
+
+
 /*<a href="https://learn.javascript.ru/property-descriptors" target="_blank">Дескриптор и флаги объектов</a>*/
 descriptor.value<br>descriptor.writable<br>descriptor.enumerable<br>descriptor.configurable
 Каждое свойство объекта имеет скрытый параметр - дескриптор. Дескриптор содержит значение свойства value и три флага, принимающими значения true/false:<br><b>value</b> - значение, которое принимает свойство объекта<br><b>writable</b> - перезапись значения разрешена/запрещена<br><b>enumerable</b> - доступ к свойству в цикле перечислений<br><b>configurable</b> - разрешение на удаление свойства из объекта
@@ -54,3 +59,8 @@ console.log( Object.getOwnPropertyDescriptor (Math, "PI").value);
 Object.getOwnPropertyDescriptor(obj, propertyName)
 Получить дескриптор для свойства propertyName объекта obj
 /*Выведем дескриптор св-ва PI объекта Math*/<br>let descr= Object.getOwnPropertyDescriptor (Math, "PI");<br>console.log(descr);
+
+
+Object.defineProperty(obj, propertyName, descriptor)
+Применить дескриптор descriptor к свойству propertyName объекта obj. Если свойство существует, defineProperty обновит его флаги. В противном случае метод создаёт новое свойство с указанным значением и флагами; если какой-либо флаг не указан явно, ему присваивается значение false.
+/*Создаём св-во user.name=John. Все флаги false, так как не указаны*/<br>let user = {};<br>Object.defineProperty (user, "name", {<br>&nbsp;value: "John"<br>});
