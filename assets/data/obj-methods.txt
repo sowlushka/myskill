@@ -4,22 +4,53 @@ new Object()
 let objUser = new Object();
 
 
-{}
-Инициализация через литерал
-let objUser={};
+{}<br>{key: value}
+Через литерал. Пустой или проинициализированный объект.
+let objUser={};<br>let objPerson={name: "Peter", year: 1978};
 
 
-/*Добавление / удаление свойств*/
+/*<a href="https://learn.javascript.ru/object#literaly-i-svoystva" target="_blank">Доступ к свойствам. Добавление / удаление свойств</a>*/
+obj.key<br>obj["key"]
+Способы доступа к свойству для чтения/записи значений
+let user={name:"Настя", age:18};<br>console.log(user.age);<br>console.log(user["name"]);
+
+
 obj["New property"] = value
 Добавление нового свойства выполняется через присваивание значения новому свойству
 let user = {};<br>user["likes birds"] = true;
 
 
-object[key] = true;
-Через присваивание значения свойству в переменной key
-let key = "likes birds";<br>user[key]=true;
+object[key] = value;
+Через присваивание значения свойству в переменной key. Если название свойства совпадает с названием переменной, которая используется для присваивания свойству значения, форму записи типа {name:name, age:age} можно упростить до {name, age}
+let key = "likes birds";<br>user[key]=true;<br><br>let name="Peter";<br>let age=18;<br> let person={name,age};
 
 
 {[key]:value}
 В литеральной нотации переменная с названием нового свойства заключается в квадратные скобки
 let fruit="apple";<br>let bag={[fruit]:5};
+
+
+delete obj.key
+Удаление свойства из объекта
+delete user.age;
+
+
+key in obj
+Проверка наличия свойства key в объекте obj с помощью оператора in. Результат проверки: true / false
+if(age in user) user.age=33;
+
+
+for(key in obj)
+Перебор имеющихся у объекта свойств
+for(let property in user){<br>&nbsp;console.log(user[property]);<br>}
+
+
+/*<a href="https://learn.javascript.ru/property-descriptors" target="_blank">Дескриптор и флаги объектов</a>*/
+descriptor.value<br>descriptor.writable<br>descriptor.enumerable<br>descriptor.configurable
+Каждое свойство объекта имеет скрытый параметр - дескриптор. Дескриптор содержит значение свойства value и три флага, принимающими значения true/false:<br><b>value</b> - значение, которое принимает свойство объекта<br><b>writable</b> - перезапись значения разрешена/запрещена<br><b>enumerable</b> - доступ к свойству в цикле перечислений<br><b>configurable</b> - разрешение на удаление свойства из объекта
+console.log( Object.getOwnPropertyDescriptor (Math, "PI").value);
+
+
+Object.getOwnPropertyDescriptor(obj, propertyName)
+Получить дескриптор для свойства propertyName объекта obj
+/*Выведем дескриптор св-ва PI объекта Math*/<br>let descr= Object.getOwnPropertyDescriptor (Math, "PI");<br>console.log(descr);
