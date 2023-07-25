@@ -41,14 +41,66 @@ if(age in user) user.age=33;
 
 
 for(key in obj)
-Перебор имеющихся у объекта свойств
+Перебор имеющихся у объекта свойств. Игнорируются свойства, заданные через Symbol()
 for(let property in user){<br>&nbsp;console.log(user[property]);<br>}
 
 
 Object.keys(obj) 
-Получить массив ключей объекта obj
+Получить массив ключей объекта obj. Игнорируются свойства, заданные через Symbol().<br>См. <a href="https://learn.javascript.ru/keys-values-entries#object-keys-values-entries" target="_blank">тут.</a>
 Object.keys(user); // ["name", "age"]
-ДОПИСАТЬ ПРИМЕР!!!
+
+
+Object.values(obj)
+Получить массив значений свойств объекта obj. Игнорируются свойства, заданные через Symbol().<br>См. <a href="https://learn.javascript.ru/keys-values-entries#object-keys-values-entries" target="_blank">тут.</a>
+Object.values(user); // ["Настя", 18]
+
+
+Object.entries(obj)
+Возвращает массив пар [ключ, значение]. Игнорируются свойства, заданные через Symbol().<br>См. <a href="https://learn.javascript.ru/keys-values-entries#object-keys-values-entries" target="_blank">тут.</a>
+let user = {<br>&nbsp;name: "John",<br>&nbsp;age: 30<br>};<br><br>/*Вернёт [ ["name","John"], ["age",30] ]*/<br>console.log(Object.entries( user));
+
+
+Object.fromEntries(array)
+Преобразовать массив вида ключ/значение в объект.<br>См. <a href="https://learn.javascript.ru/keys-values-entries#transformatsii-obekta" target="_blank">тут.</a>
+
+
+
+/*Получение символьных ключей*/
+Object.getOwnPropertySymbols(obj)
+Получить массив символьных ключей
+for (let symbKey of Object.getOwnPropertySymbols(user)) {<br>&nbsp;alert(symbKey);<br>}
+
+
+Reflect.ownKeys(obj)
+Вернуть массив всех ключей, в том числе символьные
+for (let ownKey of Reflect.ownKeys(user)) {<br>&nbsp;alert(ownKey);<br>}
+
+
+/*Клонирование и объединение объектов*/
+Object.assign(dest, [src1, src2, src3...])
+Объекты src1, src2, src3 и т.д. клонируются в объект dest. Совпадающие свойства перезаписываются.
+let user = { name: "John" };<br>let permiss1 = { canView: true };<br>let permiss2 = { canEdit: true };<br>Object.assign(user, permiss1, permiss2);<br><br>/*Пример простого клонирования*/<br>let user = {<br>&nbsp;name: "John",<br>&nbsp;age: 30<br>};<br><br>let clone = Object.assign({}, user);
+
+
+{...obj}
+Клонирование с помощью оператора расширения.
+let clone={...user};
+
+
+/*Преобразование объектов*/
+[...obj]
+Преобразовать итерируемый объект в массив с помощью <a href="https://learn.javascript.ru/rest-parameters-spread-operator#spread-operator" target="_blank">оператора расширения ...</a>
+let arr=[...user];
+
+
+Array.from(obj)
+Преобразовать объект или псевдомассив в массив
+let arr=Array.from(user);
+
+
+structuredClone(obj, [options])
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/structuredClone" target="_blank">Глубокое клонирование</a> сложных вложенных объектов. Не работает с методами
+const clonedObj = structuredClone(sourceObj);
 
 
 /*<a href="https://learn.javascript.ru/property-descriptors" target="_blank">Дескриптор и флаги объектов</a>*/
