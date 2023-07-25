@@ -48,6 +48,7 @@ for(let property in user){<br>&nbsp;console.log(user[property]);<br>}
 Object.keys(obj) 
 Получить массив ключей объекта obj
 Object.keys(user); // ["name", "age"]
+ДОПИСАТЬ ПРИМЕР!!!
 
 
 /*<a href="https://learn.javascript.ru/property-descriptors" target="_blank">Дескриптор и флаги объектов</a>*/
