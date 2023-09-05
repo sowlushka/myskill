@@ -24,3 +24,14 @@ const [, elem2, , elem4, elem5] = [2, 4, 6, 8, 10];<br><br>console.log(elem2); /
 const [el1, el2, ...rest] = arr
 Деструктуризация с использование оператора расширения.
 const fruits = ['Яблоко', 'Апельсин', 'Банан', 'Груша'];<br>const [first, ...rest] = fruits;<br><br>//'Яблоко'<br>console.log(first);<br><br>//['Апельсин', 'Банан', 'Груша']<br>console.log(rest);
+
+
+/*Методы массива*/
+includes(element)
+Проверяет наличие элемента element в массиве
+let arr=[1,0,-5,10];<br>if (arr.includes(-5)) {console.log("Да!");}&nbsp;//Да!
+
+
+indexOf(element)
+Возвращает индекс первого встретившегося элемента массива со значением element. Если элемент не найден, возвращается -1;
+let arr=[1,0,-5,10];<br>console.log(arr.indexOf(-5)); &nbsp;//2
